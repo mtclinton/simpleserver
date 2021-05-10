@@ -68,6 +68,10 @@ int main(void) {
 
 
         std::cout<<"Listening on: "<<p->ai_addr<<"\n";
+        for (struct addrinfo *ai = p; ai != NULL; ai = ai->ai_next) {
+            printf("address: %s -> %s\n", ai->ai_canonname,
+                   inet_ntop(ai->ai_family, ai->ai_addr, s, sizeof(s)));
+        }
         if (bind(sockfd, p->ai_addr, p->ai_addrlen) == -1) {
             close(sockfd);
             perror("server: bind");
