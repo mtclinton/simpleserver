@@ -26,8 +26,13 @@ void *get_in_addr(struct sockaddr *sa) {
 }
 
 int main(int argc, char *argv[]) {
+
+    // socket descriptor
     int sockfd, numbytes;
     char buf[MAXDATASIZE];
+
+
+
     struct addrinfo hints, *servinfo, *p;
     int rv;
     char s[INET6_ADDRSTRLEN];
