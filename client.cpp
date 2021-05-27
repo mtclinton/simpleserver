@@ -80,6 +80,9 @@ int main(int argc, char *argv[]) {
 
     freeaddrinfo(servinfo); // all done with this structure
 
+    if (send(sockfd, "www.example.net", 15, 0) == -1)
+        perror("send");
+
     if ((numbytes = recv(sockfd, buf, MAXDATASIZE-1, 0)) == -1) {
         perror("recv");
         exit(1);

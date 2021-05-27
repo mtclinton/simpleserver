@@ -1,5 +1,7 @@
 .idea
 .idea/*
+udp_client.cpp
+udp_server.cpp
 
 cmake-build-debug
 cmake-build-debug/*
