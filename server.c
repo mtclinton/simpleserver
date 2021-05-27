@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
-#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
@@ -11,17 +10,13 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <iostream>
-#include <string>
-#include "getip.hpp"
+#include "getip.h"
 
 #define PORT "3490"
 
 #define BACKLOG 10
 
 #define MAXDATASIZE 100 // max number of bytes we can get at once
-
-
-
 
 void sigchld_handler(int s) {
     int saved_errno = errno;

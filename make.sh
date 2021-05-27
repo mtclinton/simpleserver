@@ -1,2 +1,2 @@
-g++ getip.cpp server.cpp -o server
-g++ client.cpp -o client
+g++ getip.c server.c -o server
+g++ client.c -o client
